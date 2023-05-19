@@ -3,7 +3,7 @@ extends Node
 var player_current_attack = false
 var player_current_pickup = false
 
-var current_scene = "world" #world cliff_side
+var current_scene = "world"
 var transition_scene = false
 
 var player_exit_cliffside_posx = 526
