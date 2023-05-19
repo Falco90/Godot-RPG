@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://de47e8x33jfg"]
+
+[ext_resource type="Script" path="res://chest.gd" id="1_agof5"]
+[ext_resource type="Texture2D" uid="uid://c76a41lwpruvs" path="res://item/item_atlas.tres" id="2_e7q7p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ut1jb"]
+radius = 90.5207
+
+[node name="chest" type="Node2D"]
+script = ExtResource("1_agof5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_e7q7p")
+
+[node name="PickupArea" type="Area2D" parent="StaticBody2D"]
+scale = Vector2(0.225972, 0.225972)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/PickupArea"]
+shape = SubResource("CircleShape2D_ut1jb")
+
+[connection signal="area_entered" from="StaticBody2D/PickupArea" to="." method="_on_pickup_area_area_entered"]
+[connection signal="area_exited" from="StaticBody2D/PickupArea" to="." method="_on_pickup_area_area_exited"]
+[connection signal="body_entered" from="StaticBody2D/PickupArea" to="." method="_on_pickup_area_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/PickupArea" to="." method="_on_pickup_area_body_exited"]

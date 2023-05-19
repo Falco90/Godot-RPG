@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://gjaeoxumpgxh"]
+
+[ext_resource type="Script" path="res://item/item_data.gd" id="1_pdjvp"]
+[ext_resource type="Texture2D" uid="uid://clo8kybcrsm3l" path="res://item/#1 - Transparent Icons.png" id="2_qda3c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1wn"]
+atlas = ExtResource("2_qda3c")
+region = Rect2(64, 160, 32, 32)
+
+[resource]
+script = ExtResource("1_pdjvp")
+name = "Iron S"
+description = "A mighty sword"
+stackable = false
+texture = SubResource("AtlasTexture_tr1wn")

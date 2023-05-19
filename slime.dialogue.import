@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://t8huyuaymb3k"
+path="res://.godot/imported/slime.dialogue-455052188e52e91cb39fa37f72d3232a.tres"
+
+[deps]
+
+source_file="res://slime.dialogue"
+dest_files=["res://.godot/imported/slime.dialogue-455052188e52e91cb39fa37f72d3232a.tres"]
+
+[params]
+
