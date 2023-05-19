@@ -156,9 +156,6 @@ func current_camera():
 		$world_camera.enabled = false
 		$cliffside_camera.enabled = true
 
-func _on_request_completed(result, response_code, headers, body):
-	print(body.get_string_from_utf8())
-
 func _on_line_edit_text_submitted(new_text):
 	print(new_text)
 	global.player_talking = true

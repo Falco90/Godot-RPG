@@ -10,9 +10,6 @@ var health = 100
 
 var can_take_damage = true
 
-func _ready():
-	$HTTPRequest.request_completed.connect(_on_request_completed)
-
 func _physics_process(delta):
 	deal_with_damage()
 	
@@ -63,12 +60,3 @@ func deal_with_damage():
 
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true
-
-func talk_with_player():
-	if player_in_talkrange == true and global.player_talking == true:
-		var json = JSON.stringify(global.player_message)
-		var headers = ["Content-Type: application/json"]
-		$HTTPRequest.request("http://localhost:5000/openai", headers, HTTPClient.METHOD_POST, json)
-		
-func _on_request_completed(result, response_code, headers, body):
-	print(body.get_string_from_utf8())
